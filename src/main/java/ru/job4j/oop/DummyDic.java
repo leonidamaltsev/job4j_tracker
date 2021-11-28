@@ -8,7 +8,7 @@ public class DummyDic {
 
     public static void main(String[] args) {
         DummyDic flash = new DummyDic();
-        String eng = flash.engToRus("Неизвестное слово");
-        System.out.println(eng + " eng");
+        String eng = flash.engToRus("eng");
+        System.out.println("Неизвестное слово. " + eng);
     }
 }
