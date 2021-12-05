@@ -4,8 +4,12 @@ public class Calculator {
 
     private static int x = 5;
 
+    public static int sum(int y) {
+        return x + y;
+    }
+
     public static int minus(int y) {
-        return x - y;
+        return y - x;
     }
 
     public int multiply(int a) {
@@ -13,16 +17,18 @@ public class Calculator {
     }
 
     public int divide(int b) {
-        return x / b;
+        return b / x;
     }
 
     public int sumAllOperations(int c) {
-        return minus(2) + multiply(3) + divide(5);
+        return sum(c)+ minus(c) + multiply(c) + divide(c);
     }
 
     public static void main(String[] args) {
-        int result = minus(2);
-        System.out.println(result);
+        int result1 = sum(10);
+        System.out.println(result1);
+        int result2 = minus(7);
+        System.out.println(result2);
         Calculator calculator = new Calculator();
         int rsl = calculator.multiply(3);
         System.out.println(rsl);
