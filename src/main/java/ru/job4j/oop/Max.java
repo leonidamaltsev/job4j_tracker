@@ -1,7 +1,5 @@
 package ru.job4j.oop;
 
-import java.sql.SQLOutput;
-
 public class Max {
     public static int max(int first, int second) {
         return first > second ? first : second;
