@@ -31,19 +31,4 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void printInfo() {
-        System.out.println();
-        System.out.println(name);
-        System.out.println(id);
-    }
-
-    public static void main(String[] args) {
-        Item first = new Item();
-        first.printInfo();
-        Item second = new Item("Vasya");
-        second.printInfo();
-        Item third = new Item(35, "Petya");
-        third.printInfo();
-    }
 }
