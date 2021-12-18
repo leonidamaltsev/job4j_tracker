@@ -4,7 +4,6 @@ public class Doctor extends Profession {
 
     private String specialization;
 
-
     public Doctor() {
         super();
     }

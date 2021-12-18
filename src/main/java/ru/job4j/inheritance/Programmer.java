@@ -13,7 +13,7 @@ public class Programmer extends Engineer {
         this.cupsOfCoffee = cupsOfCoffee;
     }
 
-    public int CupsOfCoffee() {
+    public int getCupsOfCoffee() {
         return cupsOfCoffee;
     }
 }
