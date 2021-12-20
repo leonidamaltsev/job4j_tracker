@@ -39,13 +39,4 @@ public class Item {
     public LocalDateTime getCreated() {
         return created;
     }
-
-    public static void main(String[] args) {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        System.out.println("Текущие дата и время до форматирования: " + currentDateTime);
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        String currentDateTimeFormat = currentDateTime.format(formatter);
-        System.out.println("Текущие дата и время после форматирования: " + currentDateTimeFormat);
-    }
 }
