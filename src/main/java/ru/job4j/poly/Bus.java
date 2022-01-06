@@ -4,7 +4,7 @@ public class Bus implements Transport {
 
     @Override
     public void go() {
-        System.out.println();
+        System.out.println("Едем ");
     }
 
     @Override
