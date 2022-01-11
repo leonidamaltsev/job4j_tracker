@@ -16,24 +16,4 @@ public class StartUITest {
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
     }
-
-    @Test
-    public void editItem() {
-    }
-
-    @Test
-    public void deleteItem() {
-    }
-
-    @Test
-    public void findById() {
-    }
-
-    @Test
-    public void findByName() {
-    }
-
-    @Test
-    public void init() {
-    }
 }
