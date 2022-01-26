@@ -23,7 +23,7 @@ public class UserStore {
         return true;
     }
 
-    public static void main(String[] args) throws UserNotFoundException {
+    public static void main(String[] args) {
         User[] users = {
                 new User("Petr Arsentev", true)
         };
@@ -32,8 +32,10 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserNotFoundException e) {
-            e.printStackTrace();
+        } catch (UserInvalidException ui) {
+            ui.printStackTrace();
+        } catch (UserNotFoundException en) {
+            en.printStackTrace();
         }
     }
 }
