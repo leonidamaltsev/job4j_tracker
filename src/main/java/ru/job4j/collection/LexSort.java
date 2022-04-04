@@ -8,8 +8,8 @@ public class LexSort implements Comparator<String> {
 
     @Override
     public int compare(String left, String right) {
-        return Integer.compare(parseInt(left.split(". ")[0])
-                , parseInt(right.split(". ")[0]));
+        return Integer.compare(parseInt(left.split(". ")[0]),
+                parseInt(right.split(". ")[0]));
     }
 }
 
