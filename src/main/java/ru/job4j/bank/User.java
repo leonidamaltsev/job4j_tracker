@@ -1,7 +1,13 @@
 package ru.job4j.bank;
 
 import java.util.Objects;
-
+/**
+ * класс является частью модели банковской системы
+ * класс описывает модель пользователя банка,
+ * которая содержит поля: розмер паспорта и ФИО
+ * @author LEONID MALTSEV
+ * @version 1.0
+ */
 public class User {
     private String passport;
     private String username;
