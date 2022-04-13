@@ -24,7 +24,7 @@ public class Departments {
                 tmp.add(start);
             }
         }
-        return new ArrayList<>();
+        return new ArrayList<>(tmp);
     }
 
     /**
