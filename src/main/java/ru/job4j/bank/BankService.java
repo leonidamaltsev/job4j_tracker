@@ -48,7 +48,13 @@ public class BankService {
      * @return метод возвращает null если ничего не найдено.
      */
     public User findByPassport(String passport) {
-        User rsl = null;
+        return users.keySet()
+                .stream()
+                .filter(s -> s.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
+    }
+     /**   User rsl = null;
         for (User user : users.keySet()) {
             if (user.getPassport().equals(passport)) {
                 rsl = user;
@@ -56,7 +62,7 @@ public class BankService {
             }
         }
         return rsl;
-    }
+    } */
 
     /**
      * @param passport Метод ищет счет пользователя по реквизитам
@@ -67,7 +73,18 @@ public class BankService {
      * @return возвращается список аккаунтов пользователя
      */
     public Account findByRequisite(String passport, String requisite) {
-        Account rsl = null;
+        User a = findByPassport(passport);
+        if (a != null) {
+            return users.get(a)
+                    .stream()
+                    .filter(s -> s.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
+        }
+        return null;
+    }
+
+    /**    Account rsl = null;
         User user = findByPassport(passport);
         if (user != null) {
             for (Account account : users.get(user)) {
@@ -78,7 +95,7 @@ public class BankService {
             }
         }
         return rsl;
-    }
+    } */
 
     /**
      * Метод putIfAbsent проверяет, если ли такой ключ в карте или нет и если его нет,
