@@ -4,8 +4,11 @@ import java.util.Objects;
 
 public class Student {
     private int score;
-
     private String surname;
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
     public Student(int score, String surname) {
         this.score = score;
