@@ -21,7 +21,7 @@ public class StartUITest {
         UserAction[] actions = {
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         assertThat(out.toString(), is(
                 "Menu:" + System.lineSeparator()
                         + "0.Exit Program"
@@ -44,7 +44,7 @@ public class StartUITest {
                 new ReplaceAction(out),
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -70,10 +70,10 @@ public class StartUITest {
                 new String[]{"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
-                new ShowAllAction(out),
+                new FindAllAction(out),
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -102,7 +102,7 @@ public class StartUITest {
                 new FindByNameAction(out),
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -129,7 +129,7 @@ public class StartUITest {
                 new FindByIdAction(out),
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -152,7 +152,7 @@ public class StartUITest {
         MemTracker tracker = new MemTracker();
         UserAction[] actions = new UserAction[] {new ExitAction(out)
         };
-        new StartUI(out).init(in, (Store) tracker, List.of(actions));
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln

@@ -14,8 +14,6 @@ import java.util.Properties;
 
 public class SqlTracker implements Store {
 
-
-
     private Connection cn;
     private static final String SQL_INSERT = "insert into items(name, created) values (?, ?)";
     private static final String SQL_UPDATE = "update items set name = ? where id = ?";
@@ -108,7 +106,8 @@ public class SqlTracker implements Store {
                 while (resultSet.next()) {
                     items.add(new Item(
                             resultSet.getInt("id"),
-                            resultSet.getString("name")
+                            resultSet.getString("name"),
+                            resultSet.getTimestamp("created").toLocalDateTime()
                     ));
                 }
             }
@@ -127,7 +126,8 @@ public class SqlTracker implements Store {
                 while (resultSet.next()) {
                     items.add(new Item(
                             resultSet.getInt("id"),
-                            resultSet.getString("name")
+                            resultSet.getString("name"),
+                            resultSet.getTimestamp("created").toLocalDateTime()
                     ));
                 }
             }
@@ -146,8 +146,8 @@ public class SqlTracker implements Store {
                 resultSet.next();
                 item = new Item(
                         resultSet.getInt("id"),
-                        resultSet.getString("name")
-                );
+                        resultSet.getString("name"),
+                        resultSet.getTimestamp("created").toLocalDateTime());
             }
         } catch (Exception e) {
             e.printStackTrace();
