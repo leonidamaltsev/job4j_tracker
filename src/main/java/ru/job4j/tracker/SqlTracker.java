@@ -59,7 +59,7 @@ public class SqlTracker implements Store {
         try (PreparedStatement statement =
                      cn.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, item.getName());
-            statement.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+            statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             statement.execute();
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
