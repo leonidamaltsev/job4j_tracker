@@ -15,7 +15,7 @@ public class AppleStore {
     public String getLastHappyCustomer() {
         String customer = "";
         for (int i = 0; i < count; i++) {
-            customer = queue.poll().name();
+            customer = queue.remove().name();
         }
         return customer;
     }
@@ -23,7 +23,7 @@ public class AppleStore {
     public String getFirstUpsetCustomer() {
         String customer = "";
         for (int i = 0; i <= count; i++) {
-            customer = queue.poll().name();
+            customer = queue.remove().name();
         }
         return customer;
     }
