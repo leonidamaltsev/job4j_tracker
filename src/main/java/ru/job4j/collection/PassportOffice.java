@@ -8,7 +8,7 @@ public class PassportOffice {
 
     public boolean add(Citizen citizen) {
         boolean rsl = false;
-        if(!citizens.keySet().contains(citizen.getPassport())) {
+        if (!citizens.keySet().contains(citizen.getPassport())) {
             citizens.put(citizen.getPassport(), citizen);
             rsl = true;
         }

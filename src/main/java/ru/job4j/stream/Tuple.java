@@ -10,9 +10,11 @@ public class Tuple {
         this.name = name;
         this.score = score;
     }
+
     public double getScore() {
         return score;
     }
+
     public void setScore(double score) {
         this.score = score;
     }
@@ -26,8 +28,8 @@ public class Tuple {
             return false;
         }
         Tuple tuple = (Tuple) obj;
-        return Double.compare(tuple.score, score) == 0 &&
-                Objects.equals(name, tuple.name);
+        return Double.compare(tuple.score, score) == 0
+                && Objects.equals(name, tuple.name);
     }
 
     @Override

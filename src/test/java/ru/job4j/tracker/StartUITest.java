@@ -4,12 +4,10 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
-
 
     @Test
     public void whenExit() {
@@ -161,8 +159,6 @@ public class StartUITest {
                         + "Menu:" + ln
                         + "0.Exit Program" + ln
                         + "=== have a nice day ===" + ln
-
-
                 )
         );
     }

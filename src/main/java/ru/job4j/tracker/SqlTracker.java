@@ -23,7 +23,6 @@ public class SqlTracker implements Store {
     private static final String SQL_FIND_BY_ID = "select * from items where id = ?";
     private static final String SQL_FIND_BY_NAME = "select * from items where name like ?";
 
-
     public SqlTracker() {
         init();
     }
@@ -111,7 +110,7 @@ public class SqlTracker implements Store {
                     ));
                 }
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return items;

@@ -10,7 +10,6 @@ public class PhoneDictionary {
         this.persons.add(person);
     }
 
-
     public ArrayList<Person> find(String key) {
         Predicate<Person> predicateName = person -> person.getName().contains(key);
         Predicate<Person> predicateSurname = person -> person.getSurname().contains(key);
