@@ -31,7 +31,7 @@ public class SqlTracker implements Store {
 
     private void init() {
         try (InputStream in = SqlTracker.class.getClassLoader()
-                .getResourceAsStream("app.properties")) {
+                .getResourceAsStream("db/liquibase.properties")) {
             Properties config = new Properties();
             config.load(in);
             Class.forName(config.getProperty("driver-class-name"));
@@ -141,11 +141,12 @@ public class SqlTracker implements Store {
         try (PreparedStatement statement = cn.prepareStatement(SQL_FIND_BY_ID)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
-                resultSet.next();
-                item = new Item(
-                        resultSet.getInt("id"),
-                        resultSet.getString("name"),
-                        resultSet.getTimestamp("created").toLocalDateTime());
+                if (resultSet.next()) {
+                    item = new Item(
+                            resultSet.getInt("id"),
+                            resultSet.getString("name"),
+                            resultSet.getTimestamp("created").toLocalDateTime());
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
